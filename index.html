@@ -3,128 +3,333 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Currículum Vitae</title>
+    <title>Felipe Galván Uresti - Desarrollador de Software</title>
     <style>
+        :root {
+            --primary: #2c3e50;
+            --secondary: #3498db;
+            --accent: #e74c3c;
+            --light-bg: #f8f9fa;
+            --dark-text: #2c3e50;
+            --light-text: #7f8c8d;
+        }
+        
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
             margin: 0;
-            padding: 20px;
-            color: #333;
-            max-width: 800px;
+            padding: 0;
+            color: var(--dark-text);
+            background-color: #fff;
+            max-width: 900px;
             margin: 0 auto;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
         }
+        
+        .container {
+            display: grid;
+            grid-template-columns: 250px 1fr;
+            min-height: 100vh;
+        }
+        
+        .sidebar {
+            background-color: var(--primary);
+            color: white;
+            padding: 30px 20px;
+        }
+        
+        .main-content {
+            padding: 30px;
+        }
+        
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--secondary);
+            margin: 0 auto 20px;
+            display: block;
+        }
+        
         header {
             text-align: center;
             margin-bottom: 30px;
-            border-bottom: 2px solid #3498db;
             padding-bottom: 20px;
+            border-bottom: 2px solid var(--secondary);
         }
+        
         h1 {
-            color: #2c3e50;
+            color: var(--primary);
             margin-bottom: 5px;
+            font-size: 28px;
         }
-        .contact-info {
+        
+        h2 {
+            color: var(--secondary);
+            border-bottom: 2px solid var(--light-bg);
+            padding-bottom: 5px;
+            font-size: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 25px;
+        }
+        
+        .title {
+            color: var(--accent);
+            font-weight: bold;
+            font-size: 18px;
             margin-bottom: 20px;
         }
-        section {
-            margin-bottom: 25px;
+        
+        .contact-info {
+            margin-bottom: 30px;
+            text-align: center;
         }
-        h2 {
-            color: #3498db;
-            border-bottom: 1px solid #eee;
-            padding-bottom: 5px;
+        
+        .contact-info p {
+            margin: 5px 0;
+            font-size: 14px;
         }
-        .job, .education {
-            margin-bottom: 15px;
+        
+        a {
+            color: var(--secondary);
+            text-decoration: none;
+            transition: all 0.3s ease;
         }
-        .job-title, .degree {
+        
+        a:hover {
+            color: var(--accent);
+            text-decoration: underline;
+        }
+        
+        .section-title {
+            color: white;
+            background-color: var(--secondary);
+            padding: 8px 15px;
+            border-radius: 4px;
+            font-size: 16px;
+            margin: 25px 0 15px;
+        }
+        
+        .job, .education, .project {
+            margin-bottom: 20px;
+            position: relative;
+            padding-left: 20px;
+            border-left: 2px solid var(--light-bg);
+        }
+        
+        .job-title, .degree, .project-name {
             font-weight: bold;
+            font-size: 17px;
+            color: var(--primary);
         }
+        
+        .company, .institution {
+            font-weight: 600;
+            color: var(--accent);
+        }
+        
         .date {
-            color: #7f8c8d;
+            color: var(--light-text);
             font-style: italic;
+            font-size: 14px;
+            margin: 3px 0;
         }
+        
         ul {
             padding-left: 20px;
+            margin-top: 8px;
         }
-        a {
-            color: #3498db;
-            text-decoration: none;
+        
+        li {
+            margin-bottom: 5px;
+            font-size: 15px;
         }
-        a:hover {
-            text-decoration: underline;
+        
+        .skills-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+        }
+        
+        .skill-category {
+            margin-bottom: 15px;
+        }
+        
+        .skill-category h4 {
+            margin-bottom: 5px;
+            color: var(--primary);
+            font-size: 15px;
+        }
+        
+        .skill-item {
+            background-color: var(--light-bg);
+            padding: 5px 10px;
+            border-radius: 3px;
+            font-size: 14px;
+            margin-bottom: 5px;
+            display: inline-block;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+            
+            .sidebar {
+                text-align: center;
+            }
+            
+            .skills-list {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Felipe Galván Uresti</h1>
-        <p class="title">Profesión o especialización</p>
-        <div class="contact-info">
-            <p>Email: <a href="mailto:tuemail@example.com">FelipeGalvanU@gmail.com</a> | 
-               Teléfono: (+82) 81-2434-5815 | 
-               LinkedIn: <a href="https://www.linkedin.com/in/felipe-galv%C3%A1n-uresti-571b29297/" target="_blank">LinkedIn</a></p>
-        </div>
-    </header>
-
-    <section id="about">
-        <h2>Sobre mí</h2>
-        <p>Técnico en Soporte de TI | Habilidad en Configuración, Mantenimiento y Resolución de Problemas | Comprometido con el Servicio al Cliente y la Seguridad de Sistema</p>
-    </section>
-
-    <section id="experience">
-        <h2>Experiencia Laboral</h2>
-        <div class="job">
-            <div class="job-title">Puesto de trabajo - <span class="company">Nexta</span></div>
-            <div class="date">Junio 2023 - Actualmente</div>
-            <ul>
-                <li>Responsabilidad o logro principal</li>
-                <li>Otra responsabilidad o contribución importante</li>
-                <li>Resultado cuantificable si es posible (ej. "Aumenté las ventas en un 20%")</li>
-            </ul>
+    <div class="container">
+        <div class="sidebar">
+            <img src="profile-placeholder.jpg" alt="Foto de Felipe Galván" class="profile-img">
+            
+            <div class="contact-info">
+                <h2>Contacto</h2>
+                <p><strong>Email:</strong><br>
+                <a href="mailto:FelipeGalvanU@gmail.com">FelipeGalvanU@gmail.com</a></p>
+                
+                <p><strong>Teléfono:</strong><br>
+                (+82) 81-2434-5815</p>
+                
+                <p><strong>LinkedIn:</strong><br>
+                <a href="https://www.linkedin.com/in/felipe-galv%C3%A1n-uresti-571b29297/" target="_blank">Felipe Galván</a></p>
+                
+                <p><strong>GitHub:</strong><br>
+                <a href="https://github.com/tuusuario" target="_blank">github.com/tuusuario</a></p>
+            </div>
+            
+            <div class="section-title">Habilidades Técnicas</div>
+            <div class="skills-list">
+                <div class="skill-category">
+                    <h4>Lenguajes</h4>
+                    <span class="skill-item">JavaScript</span>
+                    <span class="skill-item">Python</span>
+                    <span class="skill-item">Java</span>
+                    <span class="skill-item">C#</span>
+                </div>
+                
+                <div class="skill-category">
+                    <h4>Frontend</h4>
+                    <span class="skill-item">React</span>
+                    <span class="skill-item">HTML5/CSS3</span>
+                    <span class="skill-item">Vue.js</span>
+                    <span class="skill-item">Bootstrap</span>
+                </div>
+                
+                <div class="skill-category">
+                    <h4>Backend</h4>
+                    <span class="skill-item">Node.js</span>
+                    <span class="skill-item">Express</span>
+                    <span class="skill-item">Django</span>
+                    <span class="skill-item">.NET Core</span>
+                </div>
+                
+                <div class="skill-category">
+                    <h4>Bases de Datos</h4>
+                    <span class="skill-item">MySQL</span>
+                    <span class="skill-item">MongoDB</span>
+                    <span class="skill-item">PostgreSQL</span>
+                    <span class="skill-item">Firebase</span>
+                </div>
+                
+                <div class="skill-category">
+                    <h4>DevOps</h4>
+                    <span class="skill-item">Docker</span>
+                    <span class="skill-item">Git</span>
+                    <span class="skill-item">CI/CD</span>
+                    <span class="skill-item">AWS</span>
+                </div>
+            </div>
+            
+            <div class="section-title">Idiomas</div>
+            <p>Español: Nativo<br>
+            Inglés: Avanzado (B2)<br>
+            Coreano: Básico</p>
         </div>
         
-        <div class="job">
-            <div class="job-title">Otro puesto - <span class="company">Otra empresa</span></div>
-            <div class="date">Mes Año - Mes Año</div>
-            <ul>
-                <li>Descripción de responsabilidades</li>
-                <li>Logros importantes</li>
-            </ul>
+        <div class="main-content">
+            <header>
+                <h1>Felipe Galván Uresti</h1>
+                <p class="title">Desarrollador Full Stack</p>
+            </header>
+            
+            <section id="about">
+                <h2>Sobre Mí</h2>
+                <p>Desarrollador de software con 3+ años de experiencia en el diseño, desarrollo e implementación de aplicaciones web y móviles. Especializado en tecnologías JavaScript y Python, con sólidos conocimientos en arquitectura de software y mejores prácticas de desarrollo. Apasionado por crear soluciones eficientes y escalables que generen impacto positivo en los usuarios.</p>
+            </section>
+            
+            <section id="experience">
+                <h2>Experiencia Profesional</h2>
+                <div class="job">
+                    <div class="job-title">Desarrollador Full Stack - <span class="company">Nexta</span></div>
+                    <div class="date">Junio 2023 - Actualmente</div>
+                    <ul>
+                        <li>Lideré el desarrollo de una plataforma SaaS utilizando React, Node.js y MongoDB, mejorando el rendimiento en un 40%</li>
+                        <li>Implementé microservicios con Docker y Kubernetes, reduciendo los tiempos de despliegue en un 30%</li>
+                        <li>Colaboré en el diseño de APIs RESTful que sirven a más de 50,000 usuarios mensuales</li>
+                        <li>Mentor de nuevos desarrolladores en el equipo, mejorando la productividad general</li>
+                    </ul>
+                </div>
+                
+                <div class="job">
+                    <div class="job-title">Desarrollador Frontend - <span class="company">TechSolutions</span></div>
+                    <div class="date">Enero 2021 - Mayo 2023</div>
+                    <ul>
+                        <li>Desarrollé interfaces de usuario con React y Redux para aplicaciones empresariales</li>
+                        <li>Optimicé el rendimiento de aplicaciones existentes, reduciendo el tiempo de carga en un 25%</li>
+                        <li>Implementé pruebas unitarias y de integración con Jest y Cypress</li>
+                        <li>Participé en el diseño de un sistema de diseño modular utilizado por 5 equipos de desarrollo</li>
+                    </ul>
+                </div>
+            </section>
+            
+            <section id="education">
+                <h2>Formación Académica</h2>
+                <div class="education">
+                    <div class="degree">Ingeniería en Sistemas Computacionales</div>
+                    <div class="institution">Instituto Tecnológico de Monterrey</div>
+                    <div class="date">2017 - 2021</div>
+                </div>
+                
+                <div class="education">
+                    <div class="degree">Certificación en Desarrollo Web Full Stack</div>
+                    <div class="institution">Platzi</div>
+                    <div class="date">2020</div>
+                </div>
+            </section>
+            
+            <section id="projects">
+                <h2>Proyectos Destacados</h2>
+                <div class="project">
+                    <div class="project-name">Sistema de Gestión de Inventarios</div>
+                    <div class="date">2023</div>
+                    <ul>
+                        <li>Aplicación web desarrollada con React, Node.js y MySQL para gestión de inventarios en tiempo real</li>
+                        <li>Implementación de notificaciones push y generación de reportes automatizados</li>
+                        <li><a href="#" target="_blank">Ver demo</a> | <a href="#" target="_blank">Código fuente</a></li>
+                    </ul>
+                </div>
+                
+                <div class="project">
+                    <div class="project-name">Plataforma de Aprendizaje Online</div>
+                    <div class="date">2022</div>
+                    <ul>
+                        <li>Sistema educativo con Django y PostgreSQL que sirve contenido personalizado</li>
+                        <li>Integración con sistemas de pago y análisis de progreso del estudiante</li>
+                        <li>Actualmente utilizada por más de 1,000 estudiantes</li>
+                    </ul>
+                </div>
+            </section>
         </div>
-    </section>
-
-    <section id="education">
-        <h2>Educación</h2>
-        <div class="education">
-            <div class="degree">Título obtenido</div>
-            <div class="institution">Universidad o Institución</div>
-            <div class="date">Año de graduación</div>
-        </div>
-    </section>
-
-    <section id="skills">
-        <h2>Habilidades</h2>
-        <ul>
-            <li>Habilidad profesional 1</li>
-            <li>Habilidad profesional 2</li>
-            <li>Habilidad técnica 1</li>
-            <li>Habilidad técnica 2</li>
-            <li>Idiomas (especificar nivel)</li>
-        </ul>
-    </section>
-
-    <section id="projects">
-        <h2>Proyectos Destacados</h2>
-        <div class="project">
-            <div class="project-name">Nombre del proyecto</div>
-            <ul>
-                <li>Descripción breve del proyecto y tu rol</li>
-                <li>Tecnologías utilizadas</li>
-                <li>Enlace al proyecto si está disponible online</li>
-            </ul>
-        </div>
-    </section>
+    </div>
 </body>
 </html>
